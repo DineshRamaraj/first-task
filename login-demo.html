@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("image7.jpg");
+        }
+        input[type="text"]{
+            width: 300px;
+            height: 40px;
+            border-radius: 8px;
+            border-color: white;
+            padding-left: 15px;
+            border: 1px solid white;
+            background-image: url("image7.jpg");
+            color: white;
+        }
+        input::placeholder{
+            color: white;
+        }
+        input[type="text"]:hover{
+            border-color: black;
+        }
+        input[type="radio"]{
+            width: 15px;
+            height: 15px;
+        }
+        button{
+            width: 300px;
+            height: 30px;
+            border-radius: 7px;
+            color: white;
+            background-color: black;
+            border-color: white;
+        }
+        #whole-login-div{
+            text-align: center;
+        }
+        h1{
+            color:white;
+            font-family: ita;
+        }
+        #new-user{
+            border: none;
+        }
+        #already-user{
+            border: none;
+        }
+        #Register{
+            display: none;
+            position: absolute;
+            margin-top: -600px;
+            margin-left: 200px;
+            border-color: white;
+        }
+        #already-user{
+            margin-left: -210px;
+        }
+        #new-user{
+            margin-left: -190px;
+        }
+        #gender{
+            color: white;
+            margin-left: -50px;
+        }
+        #gender-male{
+            color: white;
+        }
+        #gender-female{
+            color: white;
+        }
+        #Login{
+            position: absolute;
+            margin-top: -500px;
+            margin-left: 200px;
+        }
+        #background-color{
+            margin-left: 700px;
+            margin-top: 100px;
+            width: 550px;
+            height: 500px;
+            filter: blur();
+        }
+        #firstname-label{
+            position: absolute;
+        }
+        #firstname:focus ~ #firstname-label{
+            top: -10px;
+            font-size: 0.9rem;
+            left: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="whole-login-div">
+        <img src="image6.png" alt="" id="background-color">
+        <div id="Register">
+            <h1>Register Form</h1>
+            <input type="text" id="firstname" placeholder="First Name"><br><br>
+            <label id="firstname-label">First Name :</label>
+            <input type="text" id="lastname" placeholder="Last Name"><br><br>
+            <label id="gender">Gender : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" id="gender-male"><label id="gender-male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" id="gender-female"><label id="gender-female">Female</label><br><br>
+            <input type="text" id="phonenumber" placeholder="phone Number"><br><br>
+            <input type="text" id="email" placeholder="E-mail"><br><br>
+            <input type="text" id="password" placeholder="Password"><br><br>
+            <input type="text" id="cpassword" placeholder="Confirm-Password"><br><br>
+            <button id="already-user" onclick="changepage(1)">Already SignIn ?</button><br><br>
+            <button>Register</button>
+        </div>
+        <div id="Login">
+            <h1>Login Form</h1>
+            <input type ="text" id = "Username" placeholder = "User Name"><br><br>
+            <input type="text" id = "Password" placeholder="Password"><br><br>
+            <button id="new-user" onclick="changepage(2)">Create New Account</button><br>
+            <a href="" style="margin-left: 120px;">Forget Password?</a><br><br>
+            <button>Login</button>
+        </div>
+    </div>
+    <script>
+        changepage = (value) =>{
+            if(value == 1)
+            {
+                login = document.getElementById("Login");  
+                login.style.display = "block";
+                register = document.getElementById("Register");  
+                register.style.display = "none";
+            }
+            else{
+                login = document.getElementById("Login");  
+                login.style.display = "none";
+                register = document.getElementById("Register");  
+                register.style.display = "block";
+            }
+        } 
+    </script>
+</body>
+</html>
